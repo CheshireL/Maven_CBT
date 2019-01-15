@@ -8,13 +8,12 @@ import com.biz.cbt.vo.ExamVo;
 public class ExamService02 {
 	
 	Scanner scan;
-	ExamService examService;
-	
+	ExamService eS;
 	public ExamService02() {
 		// TODO Auto-generated constructor stub
 		
 		scan = new Scanner(System.in);
-		examService = new ExamService();
+		eS = new ExamService();
 		
 	}
 	
@@ -32,7 +31,7 @@ public class ExamService02 {
 				break;
 			}
 			if(select == 1) exModify();
-			if(select == 2) exStart();
+			if(select == 2) eS.selectAll();
 			
 			
 		}
@@ -51,44 +50,50 @@ public class ExamService02 {
 				System.out.println("문제입력을 종료합니다.");
 				break;
 			}
-			if(select == 1) exInsert();
-			if(select == 2) exUpdate();
-			if(select == 3) exDelete();
+			if(select == 1) eS.insertExam();
+			if(select == 2) eS.updateExam();
+			if(select == 3) eS.deleteExam();
+			
+			
 			
 			
 		}
 	}
 
-	public void exDelete() {
 		
-		
-		
-	}
-
-	public void exUpdate() {
-		
-		
-		
-	}
-	
-	
-	
 
 	public ExamVo exInsert() {
 		
 		
-		System.out.println("문제를 입력하세요");
-		System.out.print(">>");
-		String[] question = new String[4];
+		System.out.println("문제를 입력하세요 ");
+
+		System.out.println(" 번호입력 >>");
+		String id = scan.nextLine();
 		
-		for(int i = 0 ; i < 4 ; i++) {
-			System.out.print((i+1) + " 번 문제 >> ");
-			question[i] = scan.nextLine();
-		}
+		System.out.println(" 문제입력 >>");
+		String question = scan.nextLine();
+		
+		System.out.println("1번 문항 입력 >>");
+		String ex01 = scan.nextLine();
+		System.out.println("2번 문항 입력 >>");
+		String ex02 = scan.nextLine();
+		System.out.println("3번 문항 입력 >>");
+		String ex03 = scan.nextLine();
+		System.out.println("4번 문항 입력 >>");
+		String ex04 = scan.nextLine();
+		
 		System.out.print(" 정답 >> ");
 		String ans = scan.nextLine();
 		
 		ExamVo vo = new ExamVo();
+		
+		vo.setId(id);
+		vo.setCb_que(question);
+		vo.setCb_ex1(ex01);
+		vo.setCb_ex2(ex02);
+		vo.setCb_ex3(ex03);
+		vo.setCb_ex4(ex04);
+		vo.setCb_ans(ans);
 		
 		return vo;
 		 
@@ -96,6 +101,7 @@ public class ExamService02 {
 	}
 
 	public void exStart() {
+		
 		
 	}
 
