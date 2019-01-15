@@ -24,7 +24,7 @@ public interface ExamDao {
 	@Update(ExamSQL.EXAM_UPDATE)
 	public int update(ExamVo vo);
 	@Delete(ExamSQL.EXAM_DELETE)
-	public int delete(long st_num);
+	public int delete(long ex);
 
 
 }

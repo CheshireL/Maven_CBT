@@ -45,6 +45,12 @@ public class ExamVo {
 		this.anwer = anwer;
 		this.exam = exam;
 	}
+	public ExamVo(String question, String anwer, String exam) {
+		super();
+		this.question = question;
+		this.anwer = anwer;
+		this.exam = exam;
+	}
 	
 	
 
