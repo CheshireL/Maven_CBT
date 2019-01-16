@@ -103,16 +103,7 @@ public class ExamService {
 		
 	}
 	
-	public ExamVo findById(long ex_ID) {
-		
-		SqlSession session=this.sqlSessionFactory.openSession();
-		ExamDao eDao=session.getMapper(ExamDao.class);
-		
-		ExamVo vo = eDao.findByID(ex_ID);
-		
-		return vo;
-		
-	}
+
 	
 	public int insertExam() {
 		
