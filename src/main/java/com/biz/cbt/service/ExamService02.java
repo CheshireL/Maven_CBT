@@ -100,9 +100,6 @@ public class ExamService02 {
 		
 	}
 
-	public void exStart() {
-		
-		
-	}
+	
 
 }
